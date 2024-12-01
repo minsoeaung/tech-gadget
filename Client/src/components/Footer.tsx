@@ -25,7 +25,7 @@ export const Footer = (props: BoxProps) => {
                 <VStack align="start" spacing={0}>
                     <Text>© {new Date().getFullYear()} Tech Gadget. All rights reserved.</Text>
                     <Text color={useColorModeValue('gray.600', 'gray.400')}>
-                        Built with React, ASP.NET Core, and PostgreSQL. (
+                        Built with React, ASP.NET Core Web API, and PostgreSQL. (
                         <Button
                             variant="link"
                             colorScheme="blue"

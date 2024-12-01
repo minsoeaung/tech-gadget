@@ -1,11 +1,10 @@
-import { createContext, ReactNode, useContext, useEffect } from 'react';
+import { createContext, ReactNode, useContext } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage.ts';
 import { ApiClient } from '../api/apiClient.tsx';
 import { RegisterDto } from '../types/registerDto.ts';
 import { AuthResponse, User } from '../types/authResponse.ts';
 import { useQueryClient } from 'react-query';
 import { useNavigate } from 'react-router-dom';
-import { useIsSignedIn } from '../hooks/queries/useIsSignedIn.ts';
 
 interface IAuthContext {
     user: User | null;
@@ -29,16 +28,6 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     const queryClient = useQueryClient();
 
     const navigate = useNavigate();
-
-    const { data: isSignedIn, isSuccess } = useIsSignedIn();
-
-    useEffect(() => {
-        if (isSuccess && !isSignedIn) {
-            sessionStorage.removeItem('jwtToken');
-            queryClient.clear();
-            setUser(null);
-        }
-    }, [isSuccess]);
 
     const login = async (userName: string, password: string) => {
         const data = await ApiClient.post<never, AuthResponse>('api/Accounts/login', { userName, password });

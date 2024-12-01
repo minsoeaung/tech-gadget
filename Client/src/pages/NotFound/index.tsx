@@ -2,11 +2,6 @@ import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {
-    if (window.location.pathname === '/admin/products') {
-        // This path is rendered by ASP.NET Core MVC.
-        window.location.reload();
-    }
-
     return (
         <Box textAlign="center" py={10} px={6}>
             <Heading

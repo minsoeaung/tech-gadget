@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="7.1.0" />
         <PackageReference Include="AWSSDK.CloudFront" Version="3.7.300.5" />
         <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.300" />
         <PackageReference Include="AWSSDK.S3" Version="3.7.300.3" />
@@ -19,17 +20,20 @@
         <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.13" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.14" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.14" />
+        <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="7.0.14" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.14" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.14" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="7.0.14" />
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
         <PackageReference Include="Nager.Country" Version="4.0.0" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
@@ -44,64 +48,6 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\_ValidationScriptsPartial.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
-      <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
-      <_ContentIncludedByDefault Remove="Pages\_ViewStart.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\AccessDenied.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\ConfirmEmail.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\ExternalLogin.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\ForgotPassword.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\ForgotPasswordConfirmation.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Lockout.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Login.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\LoginWith2fa.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\LoginWithRecoveryCode.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Logout.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\Disable2fa.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\Email.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\GenerateRecoveryCodes.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\Index.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\PersonalData.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\SetPassword.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\ShowRecoveryCodes.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\_Layout.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\_StatusMessage.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\Register.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\RegisterConfirmation.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\ResendEmailConfirmation.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\ResetPassword.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\_StatusMessage.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\_ViewImports.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Shared\_Layout.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Shared\_LoginPartial.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Shared\_ValidationScriptsPartial.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\_ViewImports.cshtml" />
-      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\_ViewStart.cshtml" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <UpToDateCheckInput Remove="Views\Shared\Error.cshtml" />
-      <UpToDateCheckInput Remove="Views\Shared\_Layout.cshtml" />
-      <UpToDateCheckInput Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
     </ItemGroup>
 
 </Project>

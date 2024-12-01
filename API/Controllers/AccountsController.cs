@@ -8,13 +8,14 @@ using API.Entities;
 using API.Services;
 using ErrorOr;
 using MapsterMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
-[Authorize]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
 [Route("api/[controller]")]
 public class AccountsController : BaseApiController
@@ -22,29 +23,18 @@ public class AccountsController : BaseApiController
     private readonly UserManager<User> _userManager;
     private readonly IMapper _mapper;
     private readonly IMailService _mailService;
-    private readonly SignInManager<User> _signInManager;
 
     private readonly IAccountService _accountService;
 
     public AccountsController(UserManager<User> userManager,
         IMapper mapper,
         IMailService mailService,
-        IAccountService accountService,
-        SignInManager<User> signInManager)
+        IAccountService accountService)
     {
         _userManager = userManager;
         _mapper = mapper;
         _mailService = mailService;
         _accountService = accountService;
-        _signInManager = signInManager;
-    }
-
-    // Bc I dont want 401 or 302, only 200 OK with true or false
-    [AllowAnonymous]
-    [HttpGet("is-signed-in")]
-    public ActionResult<bool> IsSignedIn()
-    {
-        return Ok(_signInManager.IsSignedIn(User));
     }
 
     [HttpGet("me")]

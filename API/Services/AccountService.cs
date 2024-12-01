@@ -19,21 +19,15 @@ public class AccountService : IAccountService
     private readonly AwsConfig _awsConfig;
     private readonly ITokenService _tokenService;
     private readonly StoreContext _context;
-    private readonly SignInManager<User> _signInManager;
 
 
-    public AccountService(UserManager<User> userManager,
-        IImageService imageService,
-        IOptions<AwsConfig> awsConfig,
-        ITokenService tokenService,
-        StoreContext context,
-        SignInManager<User> signInManager)
+    public AccountService(UserManager<User> userManager, IImageService imageService, IOptions<AwsConfig> awsConfig,
+        ITokenService tokenService, StoreContext context)
     {
         _userManager = userManager;
         _imageService = imageService;
         _tokenService = tokenService;
         _context = context;
-        _signInManager = signInManager;
         _awsConfig = awsConfig.Value;
     }
 
@@ -126,14 +120,12 @@ public class AccountService : IAccountService
 
         await _context.UserSessions.AddAsync(userSession);
         await _context.SaveChangesAsync();
-        await _signInManager.SignInAsync(existingUser, true);
 
         return (existingUser, accessToken, refreshToken, userRoles);
     }
 
     public async Task<ErrorOr<(User, AccessToken, RefreshToken, IList<string> roles)>> RegisterAccount(string username,
-        string email,
-        string password)
+        string email, string password)
     {
         var user = new User
         {
@@ -165,7 +157,6 @@ public class AccountService : IAccountService
 
         await _context.UserSessions.AddAsync(userLogin);
         await _context.SaveChangesAsync();
-        await _signInManager.SignInAsync(user, true);
 
         return (user, accessToken, refreshToken, roles);
     }
@@ -217,8 +208,6 @@ public class AccountService : IAccountService
             _context.UserSessions.Remove(userSession);
             await _context.SaveChangesAsync();
         }
-
-        await _signInManager.SignOutAsync();
 
         return Result.Success;
     }
@@ -273,9 +262,6 @@ public class AccountService : IAccountService
         var deleteResult = await _userManager.DeleteAsync(user);
         if (!deleteResult.Succeeded)
             return GetErrors(deleteResult.Errors);
-
-        await _signInManager.SignOutAsync();
-        await _signInManager.ForgetTwoFactorClientAsync();
 
         return Result.Deleted;
     }

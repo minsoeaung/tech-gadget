@@ -1,5 +1,4 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=df5dbbe9_002D237e_002D44c5_002Dbd6b_002D96ce5f38f0c2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Get_WhenCalled_ReturnsOkResult" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::22D49C0C-5932-42A9-A88C-6CA2070DD50A::net7.0::ApiTest.AddressControllerUnitTest.Get_WhenCalled_ReturnsOkResult&lt;/TestId&gt;

@@ -26,7 +26,7 @@ const ResetPasswordPage = lazy(() => import('./ResetPassword'));
 const ProtectedRoute = ({ onlyFor }: { onlyFor: string[] }) => {
     const { user } = useAuth();
 
-    if (!user || !user.roles?.some((role) => onlyFor.includes(role))) {
+    if (!user || !user.roles.some((role) => onlyFor.includes(role))) {
         return <Navigate to="/catalog" replace />;
     }
 

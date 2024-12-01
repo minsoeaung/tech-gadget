@@ -298,16 +298,16 @@ const Header = () => {
                                         <MenuItem as={Link} to="/user/cart" icon={<Icon as={FiShoppingCart} />}>
                                             Cart {!!cart?.cartItems.length && `(${cart.cartItems.length})`}
                                         </MenuItem>
-                                        {user.roles?.some((role) => ['Admin', 'Super'].includes(role)) && (
+                                        {user.roles.some((role) => ['Admin', 'Super'].includes(role)) && (
                                             <>
                                                 <MenuDivider />
                                                 <MenuItem
                                                     as={Link}
-                                                    to="/admin/products"
+                                                    to="/inventory?pageSize=10"
                                                     icon={<Icon as={MdOutlineInventory2} />}
                                                     fontWeight="bold"
                                                 >
-                                                    ADMIN Page
+                                                    Inventory
                                                 </MenuItem>
                                             </>
                                         )}
