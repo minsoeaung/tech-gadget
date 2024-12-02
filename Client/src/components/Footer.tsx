@@ -31,7 +31,7 @@ export const Footer = (props: BoxProps) => {
                             colorScheme="blue"
                             as={Link}
                             target="_blank"
-                            to="https://github.com/minsoeaung/Seaweed"
+                            to="https://github.com/minsoeaung/tech-gadget"
                         >
                             View source
                         </Button>
@@ -41,7 +41,7 @@ export const Footer = (props: BoxProps) => {
                 <Stack direction={'row'} spacing={6}>
                     <IconButton
                         as={Link}
-                        to="https://github.com/minsoeaung/Seaweed"
+                        to="https://github.com/minsoeaung/tech-gadget"
                         target="_blank"
                         isRound
                         variant="solid"

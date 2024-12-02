@@ -1,46 +1,57 @@
-# Seaweed
+# Ecommerce App using ASP.NET Core and React
 
-An e-commerce application for a gadget store created with ASP.NET Core 7.0 Web API and React 18.
+## Features
 
-## Main Features
+- **Customer Features**:
+  - User Account: Register, log in, forgot password and update account(profile picture, username and multiple addresses).
+  - Product Browsing: Search, filter, and explore a variety of paginated products. 
+  - Shopping Cart: Add, update, and remove items in the cart. 
+  - Checkout: A simple checkout process to place orders.
+- **Admin Features**:
+  - Catalog Management: Add, edit, and delete product/category/brand listings.
 
- - Product catalog with pagination, sorter, and filter
- - Product reviews with infinite scrolling
- - Wish list, Shopping Cart and Orders
- - Policy-based Authorization for admins and users using JWT
- - Admin pages for management of products, categories, and brands.
- - Refresh token in http only cookie with automatic client refreshing ability
- - Lazy loading of frontend pages
- - Swagger implementation
- - Automated Deployment with GitHub Actions to AWS Lightsail
- - Image Storage with AWS S3 and CloudFront
+## Server Side Technologies
 
-## Technology Used
+- ASP.NET Core
+- EF Core
+- AWS s3
+- Identity Platform
+- Jwt with refresh token
+- PostgreSQL
+- MailKit
+- [ErrorOr](https://github.com/amantinband/error-or)
 
-- **Backend:** ASP.NET Core Web API
-- **Frontend:** React
-- **Database:** PostgreSQL
-- **Authentication:** JSON Web Token (JWT)
-- **Image Storage:** AWS S3
-- **Content Delivery Network (CDN):** AWS CloudFront
-- **Platform:** AWS Lightsail
+## Client Side Technologies
+- React
+- Chakra UI
+- Axios
+- React Query
+- Page Lazy Loading
+- Dark Theme
 
-## Todo
+## Screenshots
 
-- [x] **Password Reset**
-- [x] **Account Deletion** 
-- [x] **Username Edit**
-- [ ] **Google Login**
-- [ ] **Seller Reply to Review**
+### Catalog
+<img src="Screenshots/catalog_light.png"  width="auto" height="auto" alt="Catalog">
 
-## Steps to run the app
-1. TODO: fill this
+### **Product**
+<img src="Screenshots/product.png"  width="auto" height="auto" alt="Product Detail Page">
 
-## Live Demo
-[https://seaweedapp.duckdns.org/](https://seaweedapp.duckdns.org/)
+### **Cart**
+<img src="Screenshots/cart.png"  width="auto" height="auto" alt="Cart Page">
 
-## License
-- TODO: fill this
+### **Wishlist**
+<img src="Screenshots/wishlist.png"  width="auto" height="auto" alt="Wishlist Page">
 
-## References
-- TODO: fill this
+### **Checkout**
+<img src="Screenshots/order.png"  width="auto" height="auto" alt="Checkout Page">
+
+### **Login/Register/ForgotPassword**
+<img src="Screenshots/login.png"  width="auto" height="auto" alt="Login Page">
+<img src="Screenshots/register.png"  width="auto" height="auto" alt="Register Page">
+<img src="Screenshots/forgot.png"  width="auto" height="auto" alt="Forgot Password Page">
+
+### **Account**
+<img src="Screenshots/account.png"  width="auto" height="auto" alt="Account Profile Page">
+
+
