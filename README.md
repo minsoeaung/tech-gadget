@@ -4,7 +4,9 @@
 
 - **Customer Features**:
   - User Account: Register, log in, forgot password and update account(profile picture, username and multiple addresses).
-  - Product Browsing: Search, filter, and explore a variety of paginated products. 
+  - Product Browsing: Search, filter, and explore a variety of paginated products.
+  - Product Reviews: Rate products and leave descriptive comments to help other customers.
+  - Wishlist: Save your favorite products to a wishlist for later.
   - Shopping Cart: Add, update, and remove items in the cart. 
   - Checkout: A simple checkout process to place orders.
 - **Admin Features**:
